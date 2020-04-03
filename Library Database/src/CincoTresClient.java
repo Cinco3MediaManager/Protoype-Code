@@ -9,14 +9,14 @@ public class CincoTresClient
     public CincoTresClient()
     {
         String hostName = "192.168.1.6";		//Replace with IP Address of localhost if needed
-        int portNumber = 1234;					//make sure port matches one in server class
+        int portNumber = 1234;				//make sure port matches one in server class
         
-        Socket s;								//IP and Port binding
-        PrintWriter out;						//Writer to server
-        BufferedReader in;						//Reader from server
+        Socket s;					//IP and Port binding
+        PrintWriter out;				//Writer to server
+        BufferedReader in;				//Reader from server
         
-        log = new LoginWindow();				//Login window object
-        guiLaunched = false;					//has the main gui been launched
+        log = new LoginWindow();			//Login window object
+        guiLaunched = false;				//has the main gui been launched
         
         try
         {
