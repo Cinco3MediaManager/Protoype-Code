@@ -4,10 +4,9 @@ import java.io.*;
 public class CincoTresServer 
 {
 	final static int MAX_CLIENTS = 10;
-	
 	private static ClientHandler[] clientArray = new ClientHandler[MAX_CLIENTS];
 	
-	//Cinco Tres Server Main method
+    //Cinco Tres Server Main method
     public static void main(String[] args) throws IOException
     {
         int portNumber = 1234;					//1234 is, on most systems, a non-reserved port
@@ -23,7 +22,7 @@ public class CincoTresServer
         	System.out.println("Client request accepted");	//Log connection
         	
         	PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);	//Output to client
-            BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            	BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             
         	System.out.println("Creating new Client Handler");
         	ClientHandler clientHandler = new ClientHandler(i, out, in, clientSocket);
@@ -39,7 +38,7 @@ public class CincoTresServer
         	}
         	else
         	{
-            	System.out.println("Maximum number of clients being handled");
+            		System.out.println("Maximum number of clients being handled");
         	}
         	
         }
@@ -47,7 +46,7 @@ public class CincoTresServer
     }
 }
 
-	class ClientHandler implements Runnable
+    class ClientHandler implements Runnable
     {
     	private int clientID;
     	PrintWriter out;
